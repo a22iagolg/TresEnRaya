@@ -6,7 +6,6 @@ public class InterfaceConsola {
     private Random random = new Random();
     private Scanner sc = new Scanner(System.in);
     private TresEnRaya juego = new TresEnRaya('X', 'O');
-    private char[][] tablero = juego.getTablero();
     private boolean ganador;
     private int fila, columna;
 
@@ -24,7 +23,7 @@ public class InterfaceConsola {
     }
 
     public void imprimirTablero() {
-        for (char[] fila : tablero) {
+        for (char[] fila : juego.getTablero()) {
             for (char c : fila) {
                 System.out.print(c + "|");
             }
@@ -46,7 +45,7 @@ public class InterfaceConsola {
             System.out.println("Turno del jugador, introduce coordenadas: ");
             escogerCords();
 
-            while (tablero[fila][columna] != '_') {
+            while (juego.getTablero()[fila][columna] != '_') {
                 System.out.println("Casilla ocupada, elije otra.");
                 escogerCords();
             }

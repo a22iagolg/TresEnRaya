@@ -3,7 +3,7 @@ package motor3R;
 import java.util.Random;
 
 /**
- * Clase que contiene la lógica del juego 3 en Raya. 
+ * Clase que contiene la lógica del juego 3 en Raya.
  */
 public class TresEnRaya {
     private char[][] tablero = new char[3][3];
@@ -25,7 +25,12 @@ public class TresEnRaya {
      * Devuelve el tablero de juego.
      */
     public char[][] getTablero() {
-        return tablero;
+       char[][] tablerocopy = new char[3][3];
+        for(int i = 0; i < tablero.length; i++){
+            for(int j = 0; j< tablero[i].length; j++)
+            tablerocopy[i][j] = tablero[i][j];
+        }
+       return tablerocopy;
     }
 
     /**
@@ -43,7 +48,8 @@ public class TresEnRaya {
     }
 
     /**
-     * Constructor de la clase con dos parámetros. Rellena el tablero de espacios vacíos "_"
+     * Constructor de la clase con dos parámetros. Rellena el tablero de espacios
+     * vacíos "_"
      * 
      * @param humano  Char del jugador.
      * @param maquina Char de la CPU.
@@ -107,7 +113,8 @@ public class TresEnRaya {
     }
 
     /**
-     * Verifica si ha habido ganador, es decir, si alguna de las filas o cualquiera de las diagonales del tablero son iguales.
+     * Verifica si ha habido ganador, es decir, si alguna de las filas o cualquiera
+     * de las diagonales del tablero son iguales.
      */
     public boolean comprobarGanador() {
         // comprobar filas
